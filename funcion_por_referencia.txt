@@ -1,0 +1,26 @@
+public class Coche {
+    
+    public int  puertas= 3;
+    
+    public void Aumenta(){
+        
+        this.puertas++;
+    }
+       
+}
+
+
+public class Main {
+
+    public static void main(String[] args) {
+       
+        Coche miCarro = new Coche();
+        miCarro.Aumenta();
+        miCarro.Aumenta();
+        
+        System.out.println(miCarro.puertas);
+        
+        
+    }
+    
+}
