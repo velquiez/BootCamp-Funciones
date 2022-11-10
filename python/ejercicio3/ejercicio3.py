@@ -1,4 +1,4 @@
-print('Calcular el Indice de Masa Muscuar - IMC')
+print('Calcular el Indice de Masa Muscular - IMC')
 peso = float(input('Digite su peso en Kg, por favor: '))
 estatura = float(input('Ahora su estatura en mt, por ejemplo: <<1.67>>, digitela: '))
 
