@@ -1,7 +1,7 @@
-import time  #Se importa el modulo import
+import time as t #Se importa el modulo import
 
-h = time.strftime('%H') 
-m = time.strftime('%M') 
+h = t.strftime('%H') #Se guarda la hora actual en formato 24hrs
+m = t.strftime('%M') #Se guardan los minutos
 
 #print('hora :', h, ',minutos :', m)
 
