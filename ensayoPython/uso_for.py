@@ -12,7 +12,7 @@ for i in range(a,r):
 
 #caso especial for con else
 
-lista2 = ['tango', 2, 'desayuno', 'caracol']
+lista2 = ['tango', 2, 'desayuno', 'caraco']
 
 for palabra in lista2:
   if palabra == 'caracol':
