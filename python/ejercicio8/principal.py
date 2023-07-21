@@ -1,4 +1,4 @@
-import operacions as o
+import operaciones as o
 
 def main():
 
