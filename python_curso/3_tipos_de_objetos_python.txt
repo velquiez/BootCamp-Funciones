@@ -1,0 +1,155 @@
+DATOS INMUTABLES = numeros, cadena, tupla
+*****************************************************
+Varialbles
+
+a = 5
+type(a)
+id(a) --->>> ver el lugar de memoria donde está mi variable
+a = 8
+id(a)
+a = 5
+id(a) --->> vuelve al mismo lugar de memoria
+
+tex = "quiubo"
+type(tex)
+id(tex)
+tex = "hola"
+id(tex)
+
+mitupla = ('a', 2, 'g')
+print(mitupla)
+mitupla[0] = 'j' ---------->> No se puede cambiar, pues es inmutable.
+
+***************************************************
+DATOS MUTABLES: listas, diccionario, conjuntos, 
+
+--------milista = ['a', 'b','c']
+milista[0] = 'j'
+milista.append('x', 'y', 'zapato')
+print(milista)
+
+milista.remove('z')
+print(milista)
+
+dym = ['d','y','m']
+
+milista.append(dym)
+print(milista)
+
+------diccionario = {"0": "valor", "1":"cesar"}
+print(diccionario)
+print(diccionario['0'])
+
+diccionario['1'] = 'oscar'
+print(diccionario)
+
+diccionario.pop('0')
+print(diccionario)
+
+----conjunto = {2, 5, 5, 6, 6, 3}
+print(conjunto)
+ a = {2,5,6,7}
+>>a  ---->> IMPRIME EL CONJUNTO
+ b = {4,76,7,2}
+>>b
+
+a|b --->> union de conjuntos
+a & b --->> interccesion
+a - b ----> diferencia
+b - a
+a ^ b --->> diferencia simetrica
+
+-----------CADENAS
+
+t = 'parce'
+t.capitalize()
+t.title()
+t.lower()
+t.upper()
+t.replace('a', 'i')
+t.find('r')
+t.split() ----->>> convierte texto en lista
+
+text = 'mi perro se llama: Leo'
+text.split(':')
+
+text.replace(':', '').capitalize().split() ---->> combinacion de métodos.
+
+listatexto = ['mi','loro','se','come','el','arroz']
+' '.join(listatexto)--------->> convierte lista en texto
+
+variabledetexto = '--'.join(listatexto)
+print(variabledetexto)
+
+texto = '5'
+type(texto)
+texto.isnumeric()
+
+te = 'a'
+te.isnumeric()
+
+help(str)
+
+********************************************
+
+OPERADORES ARITMETICOS
+
+a = 8
+b = 34
+
+a + b
+a - b
+a * b
+a % b  ---->>> que queda de la división
+a // b
+
+a = 3
+b = 2
+a ** b
+
+a += 5  ----> (igual a = a + 5)
+a -= 5  ----> (igual a = a - 5)
+a *= 5  ----> (igual a = a + 5)
+a /= 5  ----> (igual a = a + 5)
+
+>>> a **= b
+>>> print a
+
+Otros:
+&=
+!=
+^=
+<<=
+>>=
+ 
+
+COMPARACIÓN: ==, !=, >, <, <=, >=
+MEMBRESIA: in, not in
+IDENTIDAD: is, is not
+BIT: &, |, ^, >>, <<, ~
+
+>>> import math
+>>> math.pi
+>>> math.floor(34.04534)
+>>> math.ceil(23423.032)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

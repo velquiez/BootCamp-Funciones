@@ -1,0 +1,115 @@
+pip --version
+
+--->> pip install scipy
+--->> pip install numpy
+
+Dónde buscar paquetes para instalar en mi Python?
+
+= https://pypi.org
+
+-> pip install -U Flask
+-> pip uninstall Flask
+
+Para ver lo que tengo instalado en mi Python (Sistema Operativo): 
+
+---->>> pip list
+
+también:
+
+---->> pip list | grep numpy
+
+--->> pip show numpy 
+
+****************************************
+Crear un archivo que instale programas requeridos en determinada versión:
+
+--mkdir demo1
+---cd demo1
+----vi requeriments.txt
+		--->> flask==2.2.3
+----pip install -r requeriments.txt
+************************************************
+
+CREAR ENTORNOS VIRTUALES - (OTROS SISTEMAS OPERATIVOS DENTRO DE CARPETAS)
+
+Primero hay que instalar = pipenv...
+
+-->>> pip install pipenv
+
+OPCION-1.
+
+--mkdir demo1
+---cd demo1
+----virtualenv venv
+
+---source demo1/venv/bin/activate
+
+--pip list
+
+---->>> dentro de este nuevo S.O instalo otras versiones de los paquetes.
+
+--PARA SALIR DEL ENTORNO VIRTUAL: 
+--->>> deactivate
+
+OPCION-2.
+
+---mkdir demo2
+---cd demo2
+----pipenv shell
+
+Veo lo que tengo instalado: ----pip list
+
+Para instalar dentro de este entorno:
+---pipenv install flask (por ejemplo)
+---pipenv uninstall flask
+
+--PARA SALIR DEL ENTORNO VIRTUAL: 
+--->>> exit()
+
+INSTALAR CODIGO FUENTE DE GITHUB:
+
+- cd demo1
+-- pipenv shell
+---pipenv install -e git+https://github.com/requests/requests.git#egg=requests
+
+BORRAR CARPETA: (si se desea)
+
+--->>> rm -rf demo1
+
+******************************
+CREAR UN FICHERO QUE GUARDE E INSTALE TODO LO QUE TENGO EN EL PARA OTRO 
+ENTORNO VIRTUAL:
+
+-- cd demo1
+-->> pipenv lock
+---->> dir (o ls)
+--->>> exit
+
+---cd ..
+---mkdir demo2
+---cd demo2
+----cp ../demo1/Pipfile.lock
+--- ls
+---cat Pipfile.lock
+
+-->>> pipenv install --ignore-pipfile
+
+--pipenv shell
+---pip list (me tienen que aparecer los mismos paquetes de demo1).
+
+****************************
+HERRAMIENTA DE PIPENV PARA VERIFICAR VERSIONES DE PAQUETES:
+
+----pipenv check
+--- pipenv install flask==2.2.3 (por ejemplo, para actualizar una version)
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,56 @@
+Instalar Python en Windows:
+
+1. buscar la última versión en el navegador. 
+	wwww.python.org
+2. Se descarga el instalador e instalar.
+
+3. Arrancar python: se escribe python.
+
+- ver version: python --version.
+			ls -l /usr/bin/python
+
+
+--->> Mostrar el tipo de dato:
+	
+	a = 5
+	type(a)
+	b = ("parce")
+	type(b)
+
+Python tiene un tipado dinámico pues no es necesario aclarar si es un integer,
+float, string, como Java que sí (java maneja tipado estático).
+
+Python maneja tipado fuerte y débil. Ej.
+a = 6
+b = ("quibo")
+str(a)+ b
+
+
+
+Para crear interfaces graficas: 
+-->>pygtk
+-->>pyqt
+-->> tkinter (muy bien documentado)
+
+Para manejar backend con python:
+-->>django
+-->>flask
+
+Para manejar bases de datos:
+-->> psycopg
+-->> pygresql
+-->> mysql connetor/Python
+-->> mariabd connetor/Python
+-->>Pymongo
+-->> sqlite
+ 
+Para realizar calculos matemáticos complejo:
+-->> numpy
+-->> scipy
+
+Para trabajar con hojas de calculo:
+-->> Pandas
+
+
+
+
