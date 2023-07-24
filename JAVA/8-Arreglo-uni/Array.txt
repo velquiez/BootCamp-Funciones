@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Array{
+  public static void main(String args []){
+  
+  Scanner in = new Scanner(System.in);
+  int rango = 0, cantidad_letras = 0, numero_palabra = 0;
+  String palabra = "", palabra_cortada = "";
+
+  System.out.println("Digite el rango: "); 
+  rango = in.nextInt();
+  int array[] = new int[rango];
+
+  for(int i = 0;i < array.length;i++){
+  System.out.println("Digite el valor: " + (i+1) + " ");
+  array[i] = in.nextLine;}
+  
+  for(int i = 0;i < array.length;i++){
+  System.out.print("|" + array[i] + "|" + " ");}
+  
+   System.out.print("Numero de palabra a cortar");
+   numero_palabra = in.nextInt();
+   palabra = array[numero_palabra];
+  
+  }
+}

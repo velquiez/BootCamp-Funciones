@@ -1,0 +1,68 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class RepasoRGB extends JFrame implements ActionListener{
+
+  private JLabel label1,label2,label3;
+  private JComboBox combo1,combo2,combo3;
+  private JButton boton1;
+
+  public RepasoRGB(){
+   setLayout(null);
+   label1 = new JLabel("Red");
+    label1.setBounds(15,15,90,30);
+    add(label1);
+   
+   combo1 = new JComboBox();
+    combo1.setBounds(110,15,90,30);
+    for(int i = 0;i<= 125;i++){
+     combo1.addItem(String.valueOf(i));
+     add(combo1);}
+
+   label2 = new JLabel("Green");
+    label2.setBounds(15,50,90,30);
+    add(label2);
+   
+   combo2 = new JComboBox();
+    combo2.setBounds(110,50,90,30);
+    for(int i = 0;i<= 125;i++){
+     combo2.addItem(String.valueOf(i));
+     add(combo2);}
+
+   label3 = new JLabel("Blue");
+    label3.setBounds(15,90,90,30);
+    add(label3);
+   
+   combo3 = new JComboBox();
+    combo3.setBounds(110,90,90,30);
+    for(int i = 0;i<= 125;i++){
+     combo3.addItem(String.valueOf(i));
+     add(combo3);}
+
+   boton1 = new JButton("Fijar color");
+    boton1.setBounds(70,140,110,30);
+    boton1.addActionListener(this);
+    add(boton1);
+ }
+  public void actionPerformed(ActionEvent e){
+  if(e.getSource() == boton1){
+    String ca1 = combo1.getSelectedItem().toString();
+    String ca2 = combo2.getSelectedItem().toString();
+    String ca3 = combo3.getSelectedItem().toString();
+    
+    int rojo = Integer.parseInt(ca1);
+    int verde = Integer.parseInt(ca2);
+    int azul = Integer.parseInt(ca3);
+
+   Color color1 = new Color(rojo,verde,azul);
+   boton1.setBackground(color1);}
+  }
+  public static void main(String args[]){
+   RepasoRGB formulario = new RepasoRGB();
+   formulario.setBounds(0,0,220,240);
+   formulario.setVisible(true);
+   formulario.setResizable(false);
+   formulario.setLocationRelativeTo(null);
+   }
+}

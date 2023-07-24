@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Operaciones
+{
+ public static void main (Sting args[]){
+  
+  Scanner in = new Scanner(System.in);
+  String nombre = "";
+  int numero1 = 0, numero = 0, resultado = 0, operacion = 0;
+
+  Systen.out.println ("¿Cuál es tu nombre?");
+  nombre = in.nextLine();
+
+  System.out.println ("Digite el número uno: ");
+  numero1 = in.nextInt();
+
+  System.out.println ("Digite el número dos: ");
+  numero2 = in.nextInt();
+
+  System.out.print ("Tipo de operación: Suma-1, Resta-2, Multiplicación-3, División-4.");
+  operacion = in.nextInt();
+
+  If operacion = 1
+ 
+ }
+}
