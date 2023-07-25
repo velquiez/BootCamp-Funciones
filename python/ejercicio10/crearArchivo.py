@@ -19,10 +19,11 @@ def agregaUsuario():
 
 
 def escribe(archivotxt, datos):
+    
     f = open('archivo.txt', 'a') #Agrega contenido cuantas veces lo ejecute
 
     for linea in datos:
-
+           
         if not linea.endswith('\n'):
             #print('linea sin \\n :', linea)
             print(linea)
