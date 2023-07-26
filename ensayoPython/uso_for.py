@@ -5,8 +5,9 @@ for valor in lista:
 
 r = 4
 a = -1
-for i in range(a,r):
- b=a+i
+p = 1
+for i in range(a,r, p):
+ b=a
  print(b)
 
 

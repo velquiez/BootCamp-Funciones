@@ -1,11 +1,10 @@
-#Crear y Escribir un fichero
-#El archivo de texto se crea dentro de la carpeta 
-#con dirección de donde este la terminal
+#crear un archivo py donde creéis un archivo txt, lo abráis y escribáis dentro del archivo. 
+#Para ello, tendréis que acceder dos veces al archivo creado.
 
 miLista = []
 op = 'si'
 
-def agregaUsuario():
+def guardarUsuario():
   
   global op
   
@@ -15,25 +14,38 @@ def agregaUsuario():
     miLista.append(input('Digite - apellido: '))
 
     print('Desea agregar un nuevo Usuario -->> si // no')
-    op = input('Escriba -->> si // Enter: ')
+    op = input('Escriba -->> si // no *Enter: ')
 
 
 def escribe(archivotxt, datos):
     
     f = open('archivo.txt', 'a') #Agrega contenido cuantas veces lo ejecute
 
+    c = 0
+
     for linea in datos:
-           
-        if not linea.endswith('\n'):
-            #print('linea sin \\n :', linea)
-            print(linea)
-            linea = linea + '\n'
+        
+      if c == 0:
+
+        linea = linea + ' '
+        print(linea)
         f.write(linea)
+        c = c + 1
+        continue
+	        
+      else:
+   
+          if not linea.endswith('\n'):
+            linea = linea + '\n'
+            print(linea)
+            f.write(linea)
+            c = 0
+            continue 
     
     f.close()
 
 def main():
-  agregaUsuario()
+  guardarUsuario()
   escribe('archivo.txt',miLista)
 
 if __name__ == '__main__':
