@@ -8,6 +8,8 @@ def main():
 
 def listarContenido():
 
+  #f = open('/listaFichero/Usuarios.txt' , 'r')
+
   f = open('C:/Users/USUARIO/Documents/bootcamp/ejercicios_python/listaFichero/Usuarios.txt' , 'r')
   datos = f.readlines()
   f.close()
