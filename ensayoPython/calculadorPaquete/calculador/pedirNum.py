@@ -1,4 +1,4 @@
-import aritmetica
+import aritmetica as a
 import math
 
 def pedirDatos():
