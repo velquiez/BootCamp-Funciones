@@ -1,0 +1,64 @@
+uso mysql
+
+-create database miaplicacion
+
+En consola de windows: mysql -u root -p 
+
+-show databases;
+-use miaplicacion;
+
+-create table CLIENTE(
+	id int PRIMARY KEY,
+	nombres varchar(50) NOT NULL,
+	celular varchar(15)
+	);
+
+-show tables
+-describe CLIENTE
+
+- insert into CLIENTE(id,nombres,celular) values(1,'Nelly Esquivel', '3166439845');
+
+select * from CLIENTE;
+
+-create table PROVEDOR(
+	id int PRIMARY KEY,
+	nombres varchar(50) NOT NULL,
+	celular varchar(15)
+	);
+
+------------------------------------------------
+
+sqlite3
+
+- pip install pysqlite3
+- pipenv install pysqlite3
+
+
+-sqlite3 miaplicacion.db --->> .save miDB.db
+
+sqlite3 miBd.db   <<--- para crear BD
+
+-.databases
+
+-create table usuario(
+	id INTEGER PRIMARY KEY,
+	nombres TEXT NOT NULL,
+	clave TEXT NOT NULL);
+
+.tables
+
+INSERT INTO usuario(id, nombres, clave) VALUES (1, 'Pedro Cardozo', 'asdf3');
+INSERT INTO usuario(id, nombres, clave) VALUES (1, 'Nata Juar', 'ad3');
+
+.save miBd.db
+
+SELECT * FROM usuario;
+
+.show
+
+.help
+
+.schema usuario
+
+.open miaplicacion.bd
+

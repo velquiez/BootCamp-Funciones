@@ -1,0 +1,46 @@
+Abrir mariadb desde consola
+
+C:\xampp\mysql\bin > .\mysql -h localhost -u root -p
+
+Crear bases de datos.
+
+--> igual que en mysql
+
+
+------------------------------------------------
+
+sqlite3
+
+- pip install pysqlite3
+- pipenv install pysqlite3
+
+
+-sqlite3 miaplicacion.db --->> .save miDB.db
+
+sqlite3 miBd.db   <<--- para crear BD
+
+-.databases
+
+-create table usuario(
+	id INTEGER PRIMARY KEY,
+	nombres TEXT NOT NULL,
+	clave TEXT NOT NULL);
+
+.tables
+
+INSERT INTO usuario(id, nombres, clave) VALUES (1, 'Pedro Cardozo', 'asdf3');
+INSERT INTO usuario(id, nombres, clave) VALUES (1, 'Nata Juar', 'ad3');
+
+.save miBd.db
+
+SELECT * FROM usuario;
+
+.show
+
+.help
+
+.schema usuario
+
+.open miaplicacion.bd
+
+
