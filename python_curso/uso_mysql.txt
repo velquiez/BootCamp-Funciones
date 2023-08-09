@@ -13,8 +13,8 @@ En consola de windows: mysql -u root -p
 	celular varchar(15)
 	);
 
--show tables
--describe CLIENTE
+-show tables;
+-describe CLIENTE;
 
 - insert into CLIENTE(id,nombres,celular) values(1,'Nelly Esquivel', '3166439845');
 
