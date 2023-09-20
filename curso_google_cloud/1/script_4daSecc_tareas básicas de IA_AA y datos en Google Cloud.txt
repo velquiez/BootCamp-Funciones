@@ -1,0 +1,203 @@
+Perform Foundational Data, ML, and AI Tasks in Google Cloud: Challenge Lab
+
+Tarea 1: Ejecuta un trabajo simple de Dataflow
+Task - 1 : Run a simple Dataflow job
+
+--> bq mk DATASET_NAME (dataset_name = nombre dado - buscar en el laboratorio - por ejemplo: lab_120)
+
+-->  gsutil mb gs://BUCKET_NAME (bucket_name - nombre dado...por ejemplo: qwiklabs-gcp-03-b10c65304fd7-marking)
+
+
+--> gsutil cp gs://cloud-training/gsp323/lab.csv  .(se carga el archivo a analizar - no borrar el punto) 
+  
+--> gsutil cp gs://cloud-training/gsp323/lab.schema .
+ 
+--> cat lab.schema
+
+Escribo en buscador: "Bigquery". 
+-Al lado izquierdo busco donde diga quicklabs 
+- doy click sobre lab_numero (dataset creado)
+
+Damos en:
+
+-->> Create table
+
+- llenamos los campos con los datos dados en laboratorio: 
+
+-Create table type: Empty table
+
+-table: ponemos el nombre dado de la tabla: "customer..._595" (BigQuery output table)
+- Schema: deslizamos la pestaña y en el cuadro de texto lo llenamos con lo arrojado en la consola (es algo parecido a lo siguiente- sin quitar los corchetes[])
+
+'type':'STRING','name':[¨puid"]...resto de reglones.
+
+--> click: Create table 
+ --> go to table
+
+
+-> Vamos al buscador escribimos: "dataflow" 
+
+  --> Reconnect (lado inferior derecho - opcional si la consola no aparece)
+   --> leave tutorial - documentacion
+
+-> Create Job From template
+  --> Join_name: "ponemos por ejemplo: test-job-1"
+  --> Region: la que aparece en el laboratorio.
+  --> Dataflow template: "Text files on Cloud Storage in BigQuery".
+
+  -> Required Parameters: (Se copian y pegan los dados en el laboratorio)
+
+...--->> Se copian y pengan los datos
+
+--> se despliega: Optional parameters
+  --> Se quita: "use default machine type": (Se pone el exigido = e2 - standard) 
+
+ --> click = Run Job
+
+
+##################################################
+
+Task - 2 : Run a simple Dataproc job
+This has to be done mannually.
+Tarea 2: Ejecuta un trabajo simple de Dataproc
+
+En el buscador : "Dataproc".
+
+-> Create cluster
+ -->cluster on compute engine
+
+-> Revisar región dada - desde el laboratorio
+
+- Revisar si es E2 - machine type y "Number of worker nodes". 
+
+Debajo de "Manage security" dar click en "Create".
+
+
+######################################################
+
+
+Tarea 3: Usa la API de Google Cloud Speech
+
+TASK 3 - Use the google cloud Speech API
+
+Escribo buscador: Apis & services
+
+--> Credentials
+  --> Create Credentials = APi key
+    ---> copiamos el nombre de la api key creada. (ejemplo: 
+AIzaSyAZMwJI2IQm12M6CzeGIpjO8xBxYQiLYm8)
+
+-> export API_KEY={Replace with API KEY} 
+
+->export TASK_3_BUCKET_NAME=(ejemplo de remplazo: gs://qwiklabs-gcp-00-1e903135fb7b-marking/task3-gcs-624.result) - buscar en el laboratorio
+
+->export TASK_4_BUCKET_NAME=
+
+gs://qwiklabs-gcp-00-1e903135fb7b-marking/task4-cnl-360.result
+
+(Buscar el anterior bucket_name en el laboratorio.)
+
+--> gcloud iam service-accounts create quicklab \
+  --display-name "my natural language service account"
+
+
+-->> gcloud iam service-accounts keys create ~/key.json \
+  --iam-account quicklab@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com
+
+--> export GOOGLE_APPLICATION_CREDENTIALS="/home/$USER/key.json"
+
+
+--> gcloud auth activate-service-account quicklab@${GOOGLE_CLOUD_PROJECT}.iam.gserviceaccount.com --key-file=$GOOGLE_APPLICATION_CREDENTIALS
+
+--> gcloud ml language analyze-entities --content="Old Norse texts portray Odin as one-eyed and long-bearded, frequently wielding a spear named Gungnir and wearing a cloak and a broad hat." > result.json
+
+--> gcloud auth login --no-launch-browser
+ (damos yes)
+
+---Vamos a la URL  (solo se da click)
+
+--> Copio y pego el código de autorizacion que me está apareciendo allí: (ejemplo codigo: 4/.....) 
+
+
+-->> gsutil cp result.json $TASK_4_BUCKET_NAME 
+
+
+###########################################################
+& TASK 4:-
+
+Create an API key and export as API_KEY variable
+
+
+
+--->>> Copiamos en la consola el siguiente código
+
+cat > request.json <<EOF 
+{
+  "config": {
+      "encoding":"FLAC",
+      "languageCode": "en-US"
+  },
+  "audio": {
+      "uri":"gs://cloud-training/gsp323/task3.flac"
+  }
+}
+EOF
+
+
+--->> curl -s -X POST -H "Content-Type: application/json" --data-binary @request.json \
+"https://speech.googleapis.com/v1/speech:recognize?key=${API_KEY}" > result.json
+
+
+--->> gsutil cp result.json $TASK_3_BUCKET_NAME
+
+
+CHEQUEAMOS LAS TAREAS 3 Y 4 ....DEBEN ESTAR LISTAS.
+
+########################################################################
+
+NOS DEVOLVEMOS AL TAREA - 1 Y VERIFICAMOS.
+
+PASAMOS A LA TAREA - 2
+
+
+
+--> Nos conectamos al cluster mediante SSH
+
+
+---> Pegamos el comando que nos pasaron en el laboratio
+
+ejemplo: hdfs dfs -cp qs: //cloud-training/qsp323/data.txt /data.txt
+
+
+---> buscador: dataproc
+
+---> Jobs 
+
+---> Submit jobs
+
+---> revisamos = region, cluster, job type (ej:Spark - DATOS EN EL LABORATORIO) 
+
+ --> Main class or jar = ejemplo:0rg.apache.spark.examples.SparkPageRark
+
+ --> Jar files = 
+      ejemplo: file///usr/lib/spark/examples/jars/spark-examples.jar
+
+ --> Arguments = ejemplo: /data.txt
+
+ --> Max restarts per hour: ejemplo: 1
+
+--> SUBMIT
+
+
+##################################################
+
+--->>> para abrir SSH
+
+->Estando en COMPUTE ENGINE - al lado derecho
+ 
+-> SSH = Despliego la pestaña y abro = "Open in broser 
+
+
+
+
+Credits to: @Quick Lab

@@ -82,12 +82,3 @@ class MainFrame(Frame):
         self.cmbOpciones = Combobox(self, width="10", values=self.opciones, state="readonly")
         self.cmbOpciones.place(x=100,y=90)
         self.cmbOpciones.current(0)
-
-
-        
-
-        
-
-
-
-

@@ -13,7 +13,7 @@ class Fraccion:
           
   def __str__(self):
     return "(" + str(self.num) + "/" + str(self.den) + ")"
-    
+  
   def __mul__(self, obj):
     n = self.num * obj.num
     d = self.den * obj.den
@@ -58,6 +58,13 @@ class Fraccion:
     self.num=int(self.num/d)
     self.den=int(self.den/d)
 
-    
+'''def main():
+  a = Fraccion(15,10)
+  print(a)
+  #b = Fraccion(8,4)
 
-  
+  #r = a.suma(b) #-->Cuando la función todavía se llamaba suma
+  #r = a + b  #-->Al cambiar nombre def suma por __add__
+
+if __name__ == '__main__':
+  main()'''

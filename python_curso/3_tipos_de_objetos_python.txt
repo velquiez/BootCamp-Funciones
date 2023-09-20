@@ -101,7 +101,8 @@ a + b
 a - b
 a * b
 a % b  ---->>> que queda de la división
-a // b
+a // b  ---->>> división con respuesta entera
+a / b  -----> división con respuesta decimales
 
 a = 3
 b = 2

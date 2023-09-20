@@ -53,7 +53,5 @@ class FracMix(Fraccion):
             return True
         else:
             return False
-            
-    
-    
-
+        
+#print(issubclass(FracMix, Fraccion))  #debe contestar true

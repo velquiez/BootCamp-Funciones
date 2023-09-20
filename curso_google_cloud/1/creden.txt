@@ -1,0 +1,28 @@
+velquiez@gmail.com --> Augusto02*
+
+student-00-8c54c6470036@qwiklabs.net
+5UCdvocK8T42
+qwiklabs-gcp-03-9b46e11a7e59
+GSP282
+
+​https://console.cloud.google.com/
+
+****************
+Cree una instancia jumphost para el proyecto
+
+--> Compute engine
+-->VM instances
+-->create instance
+
+***********************
+
+Poner en la consola:
+
+gcloud compute instance-templates create web-server-template \
+
+gcloud compute target-pools create nginx-pool --region-$REGION
+
+gcloud compute instance-groups managed create web-server-group \
+
+
+

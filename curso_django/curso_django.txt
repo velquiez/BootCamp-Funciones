@@ -1,0 +1,18 @@
+Curso django.
+
+- Crear nuevo proyecto:
+
+	--> mkdir miproyec ...cd miproyec
+
+	--> django-admin startproject quiuboparce
+
+- levantar base de datos:
+	
+	--> python manage.py migrate
+
+-Levantar servidor:
+
+	--> python manage.py runserver
+
+-
+
